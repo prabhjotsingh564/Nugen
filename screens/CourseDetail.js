@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View ,ScrollView,TextInput,TouchableOpacity} from 'react-native'
+import { Text, StyleSheet, View ,ScrollView,TextInput,TouchableOpacity,Image} from 'react-native'
 import {Header, Body, Title, Content, Left, Right, Accordion ,Container,Button} from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
+import image from '../images/logo.jpg';
 
 export default class CourseDetail extends Component {
 
@@ -16,10 +17,10 @@ export default class CourseDetail extends Component {
       courseDes:'',
     }
   }
-
   static navigationOptions ={
     drawerIcon:({ tintColor})=>(
-      <Icon name="list" style={{fontSize:24,color:tintColor}}/>
+      // <Icon name="inr" style={{fontSize:24,color:tintColor}}/>
+      <Image source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}} style={{height:10,width:20}}/>
     )
 }
 
@@ -143,8 +144,8 @@ clearInput = () => {
                         
                   </View>
 
-                 <View  style={{flex:1,height:300,flexDirection:"column",paddingLeft:"10%",paddingRight:"10%",paddingTop:"10%"}}>
-                    <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#50D6E4', '#23727A']} style={{flex:0.5,borderRadius:10,borderWidth:1,borderColor:"#83AEC7",backgroundColor:"red",flexDirection:"row",justifyContent: 'center'}}>
+                 <View  style={{flex:1,height:300,flexDirection:"column",paddingLeft:"10%",paddingRight:"10%",paddingTop:"10%",backgroundColor:"red"}}>
+                    {/* <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#50D6E4', '#23727A']} style={{flex:0.5,borderRadius:10,borderWidth:1,borderColor:"#83AEC7",backgroundColor:"red",flexDirection:"row",justifyContent: 'center'}}>
                         <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#3BADE5', '#60EAF9']} style={{flex:0.8,borderRadius:10,borderWidth:1,borderColor:"#64ACD6",backgroundColor:"#090",top:"15%",justifyContent:"center",borderRadius:10}}>
                             <View style={{flex:0.8,flexDirection:"column"}}>
                                 <View style={{flex:0.5,justifyContent: 'center',alignItems:"center",paddingBottom:"2%"}}>
@@ -155,7 +156,8 @@ clearInput = () => {
                                 </View>
                             </View>
                         </LinearGradient>
-                    </LinearGradient>
+                    </LinearGradient> */}
+                    <Button style={{height:200,width:200,backgroundColor:"black"}} onPress={()=>this.props.navigation.navigate("DisplayCourses")}><Text >click</Text></Button>
                  </View>
                   
 
